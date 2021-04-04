@@ -1,0 +1,31 @@
+<nav class="nav">
+  <ul>
+    {% for item1 in site.data.navigation %}
+      {% assign path1 = item1.path | relative_url %}
+      <li>
+        {% if item1.type == "file" %}<a href="{{ path1 }}">{{ item1.name }}</a>{% endif %}
+        {% if item1.type == "dir"  %}
+          <a href="{{ path1 }}/">{{ item1.name }}</a>
+          <ul>
+          {% for item2 in item1.contents %}
+            {% assign path2 = path1 | append: item2.path %}
+            <li>
+              {% if item2.type == "file" %}<a href="{{ path2 }}">{{ item2.name }}</a>{% endif %}    
+              {% if item2.type == "dir"  %}
+                <a href="{{ path2 }}/">{{ item2.name }}</a>
+                <ul>
+                  {% for item3 in item2.contents %}
+                    {% assign path3 = path2 | append: item3.path %}
+                    <li><a href="{{ path3 }}">{{ item3.name }}</a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+            </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+    <button id="theme-switcher" onclick="window.sessionStorage.setItem('theme', window.sessionStorage.getItem('theme') === 'dark' ? 'light' : 'dark'); updateTheme();">&#x2600;</button>
+  </ul>
+</nav>

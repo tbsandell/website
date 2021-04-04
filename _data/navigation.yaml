@@ -1,0 +1,13 @@
+[ 
+  {path: /index, type: file, name: Home},
+  {path: /python, type: dir, name: Python, contents: [
+    {path: /list, type: file, name: Lists},
+    {path: /string, type: file, name: Strings}
+  ]},
+  #{path: /csci, type: dir, name: CSCI, contents: [
+  #  {path: /algorithms, type: dir, name: Algorithms, contents: [
+  #    {path: /a-star, type: file, name: A*}
+  #  ]}
+  #]},
+  {path: /math, type: dir, name: Math, contents: []}
+]

@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href=/website/assets/css/styles.css>
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+    <title>List</title>
+    <meta name="generator" content="Jekyll v4.2.0" />
+    <meta property="og:title" content="List" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="List" />
+    <script type="application/ld+json">
+      {"@type":"WebPage","url":"/website/python/list.html","headline":"List","@context":"https://schema.org"}
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <title>List</title>
+  </head>
+  <header>
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="/website/index">Home</a>
+        </li>
+        <li>
+          <a href="/website/python/">Python</a>
+          <ul>
+            <li>
+              <a href="/website/python/list">Lists</a>
+            </li>
+            <li>
+              <a href="/website/python/string">Strings</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/website/math/">Math</a>
+          <ul>
+          </ul>
+        </li>
+        <button id="theme-switcher" onclick="window.sessionStorage.setItem('theme', window.sessionStorage.getItem('theme') === 'dark' ? 'light' : 'dark'); updateTheme();">&#x2600;</button>
+      </ul>
+    </nav>
+  </header>
+  <hr>
+  <main>
+    <h1 id="list">List</h1>
+    <h2 id="operations">Operations</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Types</th>
+          <th>Syntax</th>
+          <th>Details</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>List literal</td>
+          <td><code class="highlight language-py" data-lang="py"><span class="p">[</span><span class="nb">any</span><span class="p">,</span> <span class="nb">any</span><span class="p">,</span> <span class="p">...,</span> <span class="nb">any</span><span class="p">]</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="p">[</span><span class="n">e_1</span><span class="p">,</span> <span class="n">e_2</span><span class="p">,</span> <span class="p">...,</span> <span class="n">e_n</span><span class="p">]</span></code></td>
+          <td>Returns a list with the objects <code class="highlight language-py" data-lang="py"><span class="n">e_1</span></code> through <code class="highlight language-py" data-lang="py"><span class="n">e_n</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="p">[</span><span class="s">'hello'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'u'</span><span class="p">]</span></code></td>
+        </tr>
+        <tr>
+          <td>Access</td>
+          <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></code></td>
+          <td>Returns the element at index <code class="highlight language-py" data-lang="py"><span class="n">i</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span></code></td>
+        </tr>
+        <tr>
+          <td>Negative Access</td>
+          <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">]</span></code></td>
+          <td>Equivalent to <code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">-</span><span class="n">i</span><span class="p">]</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span></code></td>
+        </tr>
+        <tr>
+          <td>Slice</td>
+          <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">:</span><span class="nb">int</span><span class="p">]</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]</span></code></td>
+          <td>Returns the elements at indexes <code class="highlight language-py" data-lang="py"><span class="n">i</span></code> through <code class="highlight language-py" data-lang="py"><span class="n">j</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span></code></td>
+        </tr>
+        <tr>
+          <td>Slice with skip</td>
+          <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">:</span><span class="nb">int</span><span class="p">:</span><span class="nb">int</span><span class="p">]</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">:</span><span class="n">k</span><span class="p">]</span></code></td>
+          <td>Returns the elements at indexes <code class="highlight language-py" data-lang="py"><span class="n">i</span> <span class="o">+</span> <span class="n">kn</span></code> until <code class="highlight language-py" data-lang="py"><span class="n">j</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span></code></td>
+        </tr>
+        <tr>
+          <td>Add</td>
+          <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span> <span class="o">+</span> <span class="nb">list</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">myList1</span> <span class="o">+</span> <span class="n">myList2</span></code></td>
+          <td>Returns the union of two lists</td>
+          <td><code class="highlight language-py" data-lang="py"><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span></code></td>
+        </tr>
+        <tr>
+          <td>Multiply</td>
+          <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span> <span class="o">*</span> <span class="nb">int</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span> <span class="o">*</span> <span class="n">i</span></code></td>
+          <td>Returns <code class="highlight language-py" data-lang="py"><span class="n">myList</span> <span class="o">+</span> <span class="n">myList</span> <span class="o">+</span> <span class="p">...</span></code> <code class="highlight language-py" data-lang="py"><span class="n">i</span></code> times</td>
+          <td><code class="highlight language-py" data-lang="py"><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span></code></td>
+        </tr>
+      </tbody>
+    </table>
+    <h2 id="functions">Functions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Types</th>
+          <th>Syntax</th>
+          <th>Details</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Append</td>
+          <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">any</span><span class="p">)</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></code></td>
+          <td>Appends <code class="highlight language-py" data-lang="py"><span class="n">obj</span></code> to the end of <code class="highlight language-py" data-lang="py"><span class="n">l</span></code></td>
+          <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span></code></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    <script>
+      //-----------------------------------------------------------------------------
+      // Set Color Theme
+      //-----------------------------------------------------------------------------
+      function updateTheme() {
+        let prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+        let theme = sessionStorage.getItem('theme');
+      
+        if (theme === "light") {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else if (theme === "dark") {
+          document.documentElement.setAttribute('data-theme', 'dark' );
+        } else if (prefersDark.matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light' );
+        }
+      }
+      
+      updateTheme();
+      
+      //------------------------------------------------------------------------------
+      // Fix Syntax Highlighting
+      //------------------------------------------------------------------------------
+      
+      let blocks = document.querySelectorAll("div.highlighter-rouge");
+      blocks.forEach(block => {
+        var code = block.firstChild.firstChild;
+        code.setAttribute('class', "highlight language-py highlighter-rouge");
+        block.parentElement.replaceChild(code, block);
+      });
+    </script>
+  </footer>
+</html>

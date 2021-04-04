@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href=/website/assets/css/styles.css>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/cmu-serif" type="text/css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css" integrity="sha384-t5CR+zwDAROtph0PXGte6ia8heboACF9R5l/DiY+WZ3P2lxNgvJkQk5n7GPvLMYw" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.js" integrity="sha384-FaFLTlohFghEIZkw6VGwmf9ISTubWAVYW8tG8+w2LAIftJEULZABrF9PPFv+tVkH" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/contrib/auto-render.min.js" integrity="sha384-bHBqxz8fokvgoJ/sc17HODNxa42TlaEhB+w8ZJXTc2nZf1VgEaFZeZvT4Mznfz0v" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+              delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false},
+              ],
+              macros: {
+                "\\nn": "\\mathbb{N}",
+                "\\zz": "\\mathbb{Z}",
+                "\\qq": "\\mathbb{Q}",
+                "\\rr": "\\mathbb{R}",
+                "\\cc": "\\mathbb{C}",
+                "\\qed": "\\rule{1.75ex}{1.75ex}",
+                "\\divides": "|",
+              },
+              globalGroup: true
+          });
+      });
+    </script>
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
+    <title>Math</title>
+    <meta name="generator" content="Jekyll v4.2.0" />
+    <meta property="og:title" content="Math" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Math" />
+    <script type="application/ld+json">
+      {"@type":"WebPage","url":"/website/math/","headline":"Math","@context":"https://schema.org"}
+    </script>
+    <!-- End Jekyll SEO tag -->
+    <title>Math</title>
+  </head>
+  <header>
+    <nav class="nav">
+      <ul>
+        <li>
+          <a href="/website/index">Home</a>
+        </li>
+        <li>
+          <a href="/website/python/">Python</a>
+          <ul>
+            <li>
+              <a href="/website/python/list">Lists</a>
+            </li>
+            <li>
+              <a href="/website/python/string">Strings</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/website/math/">Math</a>
+          <ul>
+          </ul>
+        </li>
+        <button id="theme-switcher" onclick="window.sessionStorage.setItem('theme', window.sessionStorage.getItem('theme') === 'dark' ? 'light' : 'dark'); updateTheme();">&#x2600;</button>
+      </ul>
+    </nav>
+  </header>
+  <hr>
+  <main>
+    <div id="newcommand">
+      $\gdef\abs#1{|#1|}$
+    </div>
+    <div class="center">
+      <h1>Math</h1>
+      <h3>Definitions</h3>
+      <ul>
+        <li><strong>Common Divisor:</strong> A common divisor of $x$ and $y$ is an integer $d$ such that $d \divides x$ and $d \divides y$</li>
+        <li><strong>Coprime:</strong> Integers $x$ and $y$ are 'coprime' or 'relatively prime' if $\gcd(x,y) = 1$</li>
+        <li><strong>Divides:</strong> For integers $x$ and $y$, we say '$x$ divides $y$' or '$x \divides y$' if $y = kx$ for some $k \in \mathbb{Z}$</li>
+        <li><strong>Greatest Common Denominator:</strong> The 'greatest common divisor' of $x$ and $y$, written $\gcd(x,y)$, is the integer $d$ such that, $d$ is a common divisor of $x$ and $y$, and for any other common divisor $c$ of $x$ and $y$, $d &gt; c$.</li>
+      </ul>
+      <h3>Theorems</h3>
+      <ul>
+        <li>
+          <strong>Bézout's Identity:</strong> <span class="math">
+            <p>Let $x,y \in \zz$ (not both 0). Then there exist integers $u$ and $v$ so that $gcd(x,y) = ux + vy$. Furthermore, $gcd(x,y)$ is the smallest positive number of this form.</p>
+          </span><br />
+          <strong>Proof: </strong><span class="math">
+            <p>Let $S = { ux + vy \mid u,v \in \zz }$
+              and $S^+ = { s \in S \mid s &gt; 0 }$</p>
+            <p>Let $d$ be the smallest element of $S^+$</p>
+            <p>Use the division algorithm to divide $x$ by $d$,
+              $x = qd + r$ where $(0 \leq r &lt; d)$</p>
+            <p>Re-arrange, $r = x - qd$</p>
+            <p>Substitute $d = ux + vy$,
+              $r = x - q(ux + vy) = (1 - qu)x - qvy$</p>
+            <p>So $r \in S$ and $r &lt; d$.
+              But since $d$ is the smallest in $S^+$, it must be $r = 0$.
+              So $d \divides x$.</p>
+            <p>The same argument shows $d \divides y$.
+              Therefore $d$ is a common divisor of $x$ and $y$</p>
+            <p>Let $c$ be any common divisor of $x$ and $y$. So $x = c\cdot m$ and $y = c\cdot n$.</p>
+            <p>Then $d = ux + vy = ucm + vcm = (um + vn)c$.</p>
+            <p>So $c \divides d$. This means $ \abs{c}  \leq \abs{d}$. Since $d$ is positive, $c \leq d$.</p>
+            <span class="qed">$\qed$</span></span>
+        </li>
+        <hr />
+        <li>
+          <strong>Division Algorithm:</strong> <span class="math">
+            <p>Let $x,y\in\mathbb{Z}$ be positive integers. Then there exist unique integers $q$ and $r$, with $0 \leq r &lt; x$ and $y = qx + r$</p>
+          </span><br />
+          <strong>Proof: </strong><span class="math">
+            <p>Consider the set $S = { y-nx \mid n \in \mathbb{Z} } = { \cdots, y-2x, y-x, y, y+x, y+2x, \cdots }$
+              and the smaller set $S^+ = { s \in S \mid s \geq 0 }$</p>
+            <p>Then $S^+$ has a smallest element, $r$.
+              By definition, there is some $q$ with $y = qx + r$</p>
+            <p>By definition, $r &gt; 0$.</p>
+            <p>To prove that $r &lt; x$, assume $r \geq 0$
+              Then $r’ = r - x \geq 0$ and $r’ = r - x = y - (q + 1)\cdot x \in S^+$
+              Therefore there would exist $r’ &lt; r$ in $S^+$. However $r$ is the smallest element of $S^+$.
+              Therefore, $r &lt; x$</p>
+            <p>To prove uniqueness, suppose there are $Q$ and $R$ with $y = Qx + r$ and $0 \leq R &lt; x$.
+              Subtract the two equations,
+              then $0 = (q - Q)x + (r - R)$ or equivalently $R - r = (q - Q)x$.</p>
+            <p>So $R - r$ is divisible by $x$.
+              We see $\abs{R - r} &lt; x$ because both $R$ and $r$ are less than $x$.</p>
+            <p>Combining the previous two statements, $R - r = 0$, so $r = R$.
+              Then $0 = (q - Q)x$.
+              Since $x \neq 0$, $q - Q$ must be 0.</p>
+            <span class="qed">$\qed$</span></span>
+        </li>
+        <hr />
+        <li>
+          <strong>Euclidean Algorithm:</strong> <span class="math">
+            <p>To find $\gcd(x,y)$, first divide $y$ by $x$.</p>
+            <p>$y = q_0x+r_0$ where $0 \leq r_0 &lt; x$</p>
+            <p>Continually divide the smaller number by the remainder,</p>
+            <p>$x    = q_1r_0 + r_1$ where $0 \leq r_1 &lt; r_0$</p>
+            <p>$r_0  = q_2r_1 + r_2$ where $0 \leq r_2 &lt; r_1$</p>
+            <p>$r_1    = q_3r_2 + r_3$ where $0 \leq r_3 &lt; r_2$</p>
+            <p>and so on, then $\gcd(y,x) = r_n$</p>
+          </span><br />
+          <strong>Proof: </strong><span class="math">
+            <p>By lemma 1, $\gcd(y,x) = \gcd(x,r_0) = \gcd(r_0,r_1) = \ldots$</p>
+            <p>Eventually some $r_{n+1}$ will be zero.</p>
+            <p>So at some point we have $r_{n-1} = q_{n+1}r_n + 0$</p>
+            <p>Then, $\gcd(y,x) = \ldots = \gcd(r_n, 0) = r_n$</p>
+            <span class="qed">$\qed$</span></span>
+        </li>
+        <hr />
+        <li>
+          <strong>lemma 1:</strong> <span class="math">
+            <p>If $y=qx+r$ then $\gcd(y,x) = \gcd(x,r)$</p>
+          </span><br />
+          <strong>Proof: </strong><span class="math">
+            <p>Let $d=\gcd(y,x), g=\gcd(x,r)$</p>
+            <p>We can write $y=qx+r$ because $g \divides x$ and $g \divides r$, so also $g \divides y$.</p>
+            <p>Since $g \divides x$ and $g \divides y$, then $g \divides d$.</p>
+            <p>Similarly, $r=y-qx$, and since $d \divides x$ and $d \divides y$, also $d \divides r$.</p>
+            <p>Since $d \divides r$ and $d \divides x$, then $d \divides g$.</p>
+            <p>Since $d \divides g$ and $g \divides d$ and both are positive, then $g=d$.</p>
+            <span class="qed">$\qed$</span></span>
+        </li>
+        <hr />
+      </ul>
+    </div>
+  </main>
+  <footer>
+    <script>
+      //-----------------------------------------------------------------------------
+      // Set Color Theme
+      //-----------------------------------------------------------------------------
+      function updateTheme() {
+        let prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+        let theme = sessionStorage.getItem('theme');
+      
+        if (theme === "light") {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else if (theme === "dark") {
+          document.documentElement.setAttribute('data-theme', 'dark' );
+        } else if (prefersDark.matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light' );
+        }
+      }
+      
+      updateTheme();
+      
+      //------------------------------------------------------------------------------
+      // Fix Syntax Highlighting
+      //------------------------------------------------------------------------------
+      
+      let blocks = document.querySelectorAll("div.highlighter-rouge");
+      blocks.forEach(block => {
+        var code = block.firstChild.firstChild;
+        code.setAttribute('class', "highlight language-py highlighter-rouge");
+        block.parentElement.replaceChild(code, block);
+      });
+    </script>
+  </footer>
+</html>

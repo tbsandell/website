@@ -1,0 +1,130 @@
+html {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  font-family: "CMUSerifRoman";
+
+  &[data-theme="light"] {
+    --primary-color: #ddccbb;
+    --secondary-color: #aa9988;
+    --accent-color: #111133;
+    --focus-color: #998877;
+  }
+  &[data-theme="dark"] {
+    --primary-color: #1e1f20;
+    --secondary-color: #333340;
+    --accent-color: #ffffff;
+    --focus-color: #2c3e50;
+  }
+}
+
+.center {
+  width: 60%;
+  margin: 0 auto;
+  border-left: solid var(--secondary-color);
+  border-right: solid var(--secondary-color);
+  padding: 0px 50px;
+}
+
+main table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight {
+  border: thin dashed var(--secondary-color); 
+}
+th {
+  background-color: var(--secondary-color); 
+}
+table, th, td {
+  border: thin solid var(--secondary-color);
+  border-collapse: collapse;
+  padding: 10px; 
+}
+pre, code {
+  width: fit-content;
+  height: fit-content; 
+}
+.highlighter-rouge, .highlight {
+  padding: 2px;
+  width: fit-content; 
+}
+#theme-switcher {
+  font-size:  calc(200% + 10px);
+  float: right;
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+  &:hover {
+    background-color: var(--focus-color);
+  }
+  border: none;
+}
+
+.katex {
+  font-size: 1em !important;
+}
+
+span {
+  &.fr {
+    float: right;
+  }
+  &.math {
+    display: block;
+    margin-left: 1em;
+    .qed {
+      position: relative;
+      float: right;
+      top: -35px;
+    }
+  }
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: var(--secondary-color);
+  &:before, &:after {
+    content: " "; 
+    display: table; 
+  }
+  &:after { clear: both; }
+  li {
+    display: block;
+    position: relative;
+    float: left;
+    background: var(--secondary-color);
+    ul {
+      display: none;
+      li { border-top: 0; }
+      ul {
+        left: 100%;
+        top: 0;
+      }
+    }
+    a {
+      display: block;
+      padding: 1em;
+      text-decoration: none;
+      white-space: nowrap;
+      color: var(--accent-color);
+    }
+    &:hover {
+      & > ul {
+        display: block;
+        position: absolute;
+      }
+      li {
+        float: none;
+        a:hover { background: var(--focus-color); }
+      }
+      a {
+        background: var(--secondary-color);
+        &:hover { background: var(--focus-color); }
+      }
+    }
+  }
+}
+
+
+@import "highlight";

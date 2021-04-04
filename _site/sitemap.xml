@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+      <loc>/website/csci/algorithms/a-star.html</loc>
+    </url>
+    <url>
+      <loc>/website/about.html</loc>
+    </url>
+    <url>
+      <loc>/website/home.html</loc>
+    </url>
+    <url>
+      <loc>/website/math/</loc>
+    </url>
+    <url>
+      <loc>/website/csci/algorithms/</loc>
+    </url>
+    <url>
+      <loc>/website/csci/</loc>
+    </url>
+    <url>
+      <loc>/website/python/</loc>
+    </url>
+    <url>
+      <loc>/website/</loc>
+    </url>
+    <url>
+      <loc>/website/python/list.html</loc>
+    </url>
+    <url>
+      <loc>/website/python/string.html</loc>
+    </url>
+  </urlset>

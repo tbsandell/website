@@ -1,0 +1,180 @@
+# ██████  ███████ ███████ ██ ███    ██ ██ ████████ ██  ██████  ███    ██ ███████ 
+# ██   ██ ██      ██      ██ ████   ██ ██    ██    ██ ██    ██ ████   ██ ██      
+# ██   ██ █████   █████   ██ ██ ██  ██ ██    ██    ██ ██    ██ ██ ██  ██ ███████ 
+# ██   ██ ██      ██      ██ ██  ██ ██ ██    ██    ██ ██    ██ ██  ██ ██      ██ 
+# ██████  ███████ ██      ██ ██   ████ ██    ██    ██  ██████  ██   ████ ███████ 
+#                                                                                
+# ██████████████████████████████████████████████████████████████████████████████
+# ██████████████████████████████████████████████████████████████████████████████
+defs:
+#  ██████  ██████  ███    ███ ███    ███  ██████  ███    ██      ██████  ██ ██    ██ ██ ███████  ██████  ██████  
+# ██      ██    ██ ████  ████ ████  ████ ██    ██ ████   ██      ██   ██ ██ ██    ██ ██ ██      ██    ██ ██   ██ 
+# ██      ██    ██ ██ ████ ██ ██ ████ ██ ██    ██ ██ ██  ██      ██   ██ ██ ██    ██ ██ ███████ ██    ██ ██████  
+# ██      ██    ██ ██  ██  ██ ██  ██  ██ ██    ██ ██  ██ ██      ██   ██ ██  ██  ██  ██      ██ ██    ██ ██   ██ 
+#  ██████  ██████  ██      ██ ██      ██  ██████  ██   ████      ██████  ██   ████   ██ ███████  ██████  ██   ██ 
+  - name:  Common Divisor
+    inf:   A common divisor of $x$ and $y$ is an integer $d$ such that $d \divides x$ and $d \divides y$
+    frm:   $\forall x,y,d \left( d \text{ is a common divisor of } x \text{ and } y \iff d \divides x \land d \divides y \right)$
+#  ██████  ██████  ██████  ██████  ██ ███    ███ ███████ 
+# ██      ██    ██ ██   ██ ██   ██ ██ ████  ████ ██      
+# ██      ██    ██ ██████  ██████  ██ ██ ████ ██ █████   
+# ██      ██    ██ ██      ██   ██ ██ ██  ██  ██ ██      
+#  ██████  ██████  ██      ██   ██ ██ ██      ██ ███████ 
+  - name:  Coprime
+    inf:   Integers $x$ and $y$ are 'coprime' or 'relatively prime' if $\gcd(x,y) = 1$
+    frm:   $\forall x,y \in \zz (x \text{ and } y \text { are coprime } \iff \gcd(x,y) = 1)$
+# ██████  ██ ██    ██ ██ ██████  ███████ ███████ 
+# ██   ██ ██ ██    ██ ██ ██   ██ ██      ██      
+# ██   ██ ██ ██    ██ ██ ██   ██ █████   ███████ 
+# ██   ██ ██  ██  ██  ██ ██   ██ ██           ██ 
+# ██████  ██   ████   ██ ██████  ███████ ███████ 
+  - name:  Divides
+    inf:   For integers $x$ and $y$, we say '$x$ divides $y$' or '$x \divides y$' if $y = kx$ for some $k \in \mathbb{Z}$
+    frm:   $\forall x,y \in \zz \left( x \divides y \iff \exists k \in \zz \left( y = kx \right) \right)$
+#  ██████   ██████ ██████  
+# ██       ██      ██   ██ 
+# ██   ███ ██      ██   ██ 
+# ██    ██ ██      ██   ██ 
+#  ██████   ██████ ██████  
+  - name:  Greatest Common Denominator
+    inf:   The 'greatest common divisor' of $x$ and $y$, written $\gcd(x,y)$, is the integer $d$ such that,
+      $d$ is a common divisor of $x$ and $y$, and
+      for any other common divisor $c$ of $x$ and $y$, $d > c$.
+    frm:   $\forall x,y,d \left( \gcd(x,y) = d \iff d \text{ is a common divisor of } x \text { and } y \land \forall c \left( c \text{ is a common divisor of } x \text { and } y \implies c \leq d \right) \right)$
+
+# ████████ ██   ██ ███████  ██████  ██████  ███████ ███    ███ ███████ 
+#    ██    ██   ██ ██      ██    ██ ██   ██ ██      ████  ████ ██      
+#    ██    ███████ █████   ██    ██ ██████  █████   ██ ████ ██ ███████ 
+#    ██    ██   ██ ██      ██    ██ ██   ██ ██      ██  ██  ██      ██ 
+#    ██    ██   ██ ███████  ██████  ██   ██ ███████ ██      ██ ███████
+#  
+# ████████████████████████████████████████████████████████████████████
+# ████████████████████████████████████████████████████████████████████
+thms:
+# ██████  ███████ ███████  ██████  ██    ██ ████████ ███████      ██ ██████  ███████ ███    ██ ████████ ██ ████████ ██    ██ 
+# ██   ██ ██         ███  ██    ██ ██    ██    ██    ██           ██ ██   ██ ██      ████   ██    ██    ██    ██     ██  ██  
+# ██████  █████     ███   ██    ██ ██    ██    ██    ███████      ██ ██   ██ █████   ██ ██  ██    ██    ██    ██      ████   
+# ██   ██ ██       ███    ██    ██ ██    ██    ██         ██      ██ ██   ██ ██      ██  ██ ██    ██    ██    ██       ██    
+# ██████  ███████ ███████  ██████   ██████     ██    ███████      ██ ██████  ███████ ██   ████    ██    ██    ██       ██    
+  - name:  Bézout's Identity
+    thm:
+      inf: Let $x,y \in \zz$ (not both 0).
+        Then there exist integers $u$ and $v$ so that $gcd(x,y) = ux + vy$.
+        Furthermore, $gcd(x,y)$ is the smallest positive number of this form.
+      frm: _
+    prf:
+      inf: |
+        Let $S = \{ ux + vy \mid u,v \in \zz \}$
+        and $S^+ = \{ s \in S \mid s > 0 \}$
+        
+        Let $d$ be the smallest element of $S^+$
+        
+        Use the division algorithm to divide $x$ by $d$,
+        $x = qd + r$ where $(0 \leq r < d)$
+        
+        Re-arrange, $r = x - qd$
+        
+        Substitute $d = ux + vy$,
+        $r = x - q(ux + vy) = (1 - qu)x - qvy$
+        
+        So $r \in S$ and $r < d$.
+        But since $d$ is the smallest in $S^+$, it must be $r = 0$.
+        So $d \divides x$.
+        
+        The same argument shows $d \divides y$.
+        Therefore $d$ is a common divisor of $x$ and $y$
+        
+        Let $c$ be any common divisor of $x$ and $y$. So $x = c\cdot m$ and $y = c\cdot n$.
+        
+        Then $d = ux + vy = ucm + vcm = (um + vn)c$.
+        
+        So $c \divides d$. This means $ \abs{c}  \leq \abs{d}$. Since $d$ is positive, $c \leq d$. 
+      frm: _
+# ██████  ██ ██    ██ ██ ███████ ██  ██████  ███    ██       █████   ██       ██████   ██████  ██████  ██ ████████ ██   ██ ███    ███ 
+# ██   ██ ██ ██    ██ ██ ██      ██ ██    ██ ████   ██      ██   ██  ██      ██       ██    ██ ██   ██ ██    ██    ██   ██ ████  ████ 
+# ██   ██ ██ ██    ██ ██ ███████ ██ ██    ██ ██ ██  ██      ███████  ██      ██   ███ ██    ██ ██████  ██    ██    ███████ ██ ████ ██ 
+# ██   ██ ██  ██  ██  ██      ██ ██ ██    ██ ██  ██ ██      ██   ██  ██      ██    ██ ██    ██ ██   ██ ██    ██    ██   ██ ██  ██  ██ 
+# ██████  ██   ████   ██ ███████ ██  ██████  ██   ████      ██   ██  ███████  ██████   ██████  ██   ██ ██    ██    ██   ██ ██      ██ 
+  - name:  Division Algorithm
+    thm:
+      inf: Let $x,y\in\mathbb{Z}$ be positive integers.
+        Then there exist unique integers $q$ and $r$, with $0 \leq r < x$ and $y = qx + r$
+      frm: $\forall x,y \exists q,r \in \nn (0 \leq r \land y = qx + r)$
+    prf:
+      inf: |
+        Consider the set $S = \{ y-nx \mid n \in \mathbb{Z} \} = \{ \cdots, y-2x, y-x, y, y+x, y+2x, \cdots \}$
+        and the smaller set $S^+ = \{ s \in S \mid s \geq 0 \}$
+        
+        Then $S^+$ has a smallest element, $r$.
+        By definition, there is some $q$ with $y = qx + r$
+        
+        By definition, $r > 0$.
+        
+        To prove that $r < x$, assume $r \geq 0$
+        Then $r' = r - x \geq 0$ and $r' = r - x = y - (q + 1)\cdot x \in S^+$
+        Therefore there would exist $r' < r$ in $S^+$. However $r$ is the smallest element of $S^+$.
+        Therefore, $r < x$
+        
+        To prove uniqueness, suppose there are $Q$ and $R$ with $y = Qx + r$ and $0 \leq R < x$.
+        Subtract the two equations,
+        then $0 = (q - Q)x + (r - R)$ or equivalently $R - r = (q - Q)x$.
+        
+        So $R - r$ is divisible by $x$.
+        We see $\abs{R - r} < x$ because both $R$ and $r$ are less than $x$.
+        
+        Combining the previous two statements, $R - r = 0$, so $r = R$.
+        Then $0 = (q - Q)x$.
+        Since $x \neq 0$, $q - Q$ must be 0.
+      frm: ""
+# ███████ ██    ██  ██████ ██      ██ ██████  ███████  █████   ███    ██       █████   ██       ██████   ██████  ██████  ██ ████████ ██   ██ ███    ███ 
+# ██      ██    ██ ██      ██      ██ ██   ██ ██      ██   ██  ████   ██      ██   ██  ██      ██       ██    ██ ██   ██ ██    ██    ██   ██ ████  ████ 
+# █████   ██    ██ ██      ██      ██ ██   ██ █████   ███████  ██ ██  ██      ███████  ██      ██   ███ ██    ██ ██████  ██    ██    ███████ ██ ████ ██ 
+# ██      ██    ██ ██      ██      ██ ██   ██ ██      ██   ██  ██  ██ ██      ██   ██  ██      ██    ██ ██    ██ ██   ██ ██    ██    ██   ██ ██  ██  ██ 
+# ███████  ██████   ██████ ███████ ██ ██████  ███████ ██   ██  ██   ████      ██   ██  ███████  ██████   ██████  ██   ██ ██    ██    ██   ██ ██      ██ 
+  - name:  Euclidean Algorithm
+    thm:
+      inf: |
+        To find $\gcd(x,y)$, first divide $y$ by $x$.
+
+        $y = q_0x+r_0$ where $0 \leq r_0 < x$
+
+        Continually divide the smaller number by the remainder,
+
+        $x    = q_1r_0 + r_1$ where $0 \leq r_1 < r_0$
+        
+        $r_0  = q_2r_1 + r_2$ where $0 \leq r_2 < r_1$
+        
+        $r_1    = q_3r_2 + r_3$ where $0 \leq r_3 < r_2$
+
+        and so on, then $\gcd(y,x) = r_n$
+      frm: ""
+    prf:
+      inf: |
+        By lemma 1, $\gcd(y,x) = \gcd(x,r_0) = \gcd(r_0,r_1) = \ldots$
+
+        Eventually some $r_{n+1}$ will be zero.
+
+        So at some point we have $r_{n-1} = q_{n+1}r_n + 0$
+
+        Then, $\gcd(y,x) = \ldots = \gcd(r_n, 0) = r_n$
+      frm: ""
+# ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ ███████ 
+  - name:  lemma 1
+    thm:
+      inf: If $y=qx+r$ then $\gcd(y,x) = \gcd(x,r)$
+      frm: $\forall x,y,q,r \in \nn (y = qx + r \implies \gcd(y,x) = \gcd(x,r))$
+    prf:
+      inf: |
+        Let $d=\gcd(y,x), g=\gcd(x,r)$
+        
+        We can write $y=qx+r$ because $g \divides x$ and $g \divides r$, so also $g \divides y$.
+        
+        Since $g \divides x$ and $g \divides y$, then $g \divides d$.
+        
+        Similarly, $r=y-qx$, and since $d \divides x$ and $d \divides y$, also $d \divides r$.
+        
+        Since $d \divides r$ and $d \divides x$, then $d \divides g$.
+        
+        Since $d \divides g$ and $g \divides d$ and both are positive, then $g=d$.
+      frm: ""
+      

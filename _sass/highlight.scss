@@ -1,0 +1,96 @@
+html, html[data-theme="light"] {
+  --back-color:    #1E1E1E;         --name:          #000000;         --keyword:       #5C96D6;         --operator:      #0057b4;         --comment:       #FFFFFF;
+  --string:        #af4820;         --name-attribute:#000000;         --kw-constant:   #FFFFFF;         --operator-word: #0057b4;         --com-multiline: #FFFFFF;
+  --str-backtick:  #FFFFFF;         --name-builtin:  #000000;         --kw-declaration:#FFFFFF;         --gen-deleted:   #FFFFFF;         --com-preproc:   #FFFFFF;
+  --str-char:      #FFFFFF;         --name-builtinps:#000000;         --kw-namespace:  #FFFFFF;         --gen-emph:      #FFFFFF;         --com-single:    #FFFFFF;
+  --str-doc:       #FFFFFF;         --name-class:    #000000;         --kw-pseudo:     #FFFFFF;         --gen-error:     #FFFFFF;         --com-special:   #FFFFFF;
+  --str-double:    #FFFFFF;         --name-constant: #000000;         --kw-reserved:   #FFFFFF;         --gen-heading:   #FFFFFF;         --error:         #FFFFFF;
+  --str-escape:    #D7BA7D;         --name-decorator:#000000;         --kw-type:       #FFFFFF;         --gen-inserted:  #FFFFFF;         --punctuation:   #666666;
+  --str-heredoc:   #FFFFFF;         --name-entity:   #000000;         --number:        #4F9C1E;         --gen-output:    #FFFFFF;         --txt-whitespace:#FFFFFF;
+  --str-interpol:  #FFFFFF;         --name-exception:#000000;         --num-float:     #4F9C1E;         --gen-prompt:    #FFFFFF;         --variable:      #9CDCFE;
+  --str-other:     #FFFFFF;         --name-function: #000000;         --num-hex:       #4F9C1E;         --gen-strong:    #FFFFFF;         --var-class:     #FFFFFF;
+  --str-regex:     #FFFFFF;         --name-label:    #000000;         --num-int:       #4F9C1E;         --gen-subheading:#FFFFFF;         --var-global:    #FFFFFF;
+  --str-single:    #FFFFFF;         --name-namespace:#000000;         --num-int-long:  #4F9C1E;         --gen-traceback: #FFFFFF;         --var-instance:  #FFFFFF;
+  --str-symbol:    #FFFFFF;         --name-tag:      #000000;         --num-oct:       #4F9C1E;
+}
+
+html[data-theme="dark"] {
+  --back-color:    #1E1E1E;         --name:          #9CDCFE;         --keyword:       #5C96D6;         --operator:      #C586C0;         --comment:       #FFFFFF;
+  --string:        #CE9178;         --name-attribute:#9CDCFE;         --kw-constant:   #FFFFFF;         --operator-word: #5C96D6;         --com-multiline: #FFFFFF;
+  --str-backtick:  #FFFFFF;         --name-builtin:  white;         --kw-declaration:#FFFFFF;         --gen-deleted:   #FFFFFF;         --com-preproc:   #FFFFFF;
+  --str-char:      #FFFFFF;         --name-builtinps:#FFFFFF;         --kw-namespace:  #FFFFFF;         --gen-emph:      #FFFFFF;         --com-single:    #FFFFFF;
+  --str-doc:       #FFFFFF;         --name-class:    #9CDCFE;         --kw-pseudo:     #FFFFFF;         --gen-error:     #FFFFFF;         --com-special:   #FFFFFF;
+  --str-double:    #FFFFFF;         --name-constant: #9CDCFE;         --kw-reserved:   #FFFFFF;         --gen-heading:   #FFFFFF;         --error:         #FFFFFF;
+  --str-escape:    #D7BA7D;         --name-decorator:#9CDCFE;         --kw-type:       #FFFFFF;         --gen-inserted:  #FFFFFF;         --punctuation:   #888888;
+  --str-heredoc:   #FFFFFF;         --name-entity:   #9CDCFE;         --number:        #B5CEA5;         --gen-output:    #FFFFFF;         --txt-whitespace:#FFFFFF;
+  --str-interpol:  #FFFFFF;         --name-exception:#9CDCFE;         --num-float:     #B5CEA5;         --gen-prompt:    #FFFFFF;         --variable:      #9CDCFE;
+  --str-other:     #FFFFFF;         --name-function: #9CDCFE;         --num-hex:       #B5CEA5;         --gen-strong:    #FFFFFF;         --var-class:     #FFFFFF;
+  --str-regex:     #FFFFFF;         --name-label:    #9CDCFE;         --num-int:       #B5CEA5;         --gen-subheading:#FFFFFF;         --var-global:    #FFFFFF;
+  --str-single:    #FFFFFF;         --name-namespace:#9CDCFE;         --num-int-long:  #FFFFFF;         --gen-traceback: #FFFFFF;         --var-instance:  #FFFFFF;
+  --str-symbol:    #FFFFFF;         --name-tag:      #9CDCFE;         --num-oct:       #B5CEA5;
+}
+
+//.highlight pre  { background-color: var(--back-color);                                                           }
+//.highlight .hll { background-color: var(--back-color);                                                           }
+.highlight .c   { color: var(--comment);                              font-weight: inherit; font-style: inherit; }
+.highlight .err { color: var(--error);                                font-weight: inherit; font-style: inherit; }
+.highlight .k   { color: var(--keyword);                              font-weight: inherit; font-style: inherit; }
+.highlight .o   { color: var(--operator);                             font-weight: inherit; font-style: inherit; }
+.highlight .cm  { color: var(--com-multiline);                        font-weight: inherit; font-style: inherit; }
+.highlight .cp  { color: var(--com-preproc);                          font-weight: inherit; font-style: inherit; }
+.highlight .c1  { color: var(--com-single);                           font-weight: inherit; font-style: inherit; }
+.highlight .cs  { color: var(--com-special);                          font-weight: inherit; font-style: inherit; }
+.highlight .gd  { color: var(--gen-deleted);                          font-weight: inherit; font-style: inherit; }
+.highlight .ge  { color: var(--gen-emph);                             font-weight: inherit; font-style: inherit; }
+.highlight .gr  { color: var(--gen-error);                            font-weight: inherit; font-style: inherit; }
+.highlight .gh  { color: var(--gen-heading);                          font-weight: inherit; font-style: inherit; }
+.highlight .gi  { color: var(--gen-inserted);                         font-weight: inherit; font-style: inherit; }
+.highlight .go  { color: var(--gen-output);                           font-weight: inherit; font-style: inherit; }
+.highlight .gp  { color: var(--gen-prompt);                           font-weight: inherit; font-style: inherit; }
+.highlight .gs  { color: var(--gen-strong);                           font-weight: inherit; font-style: inherit; }
+.highlight .gu  { color: var(--gen-subheading);                       font-weight: inherit; font-style: inherit; }
+.highlight .gt  { color: var(--gen-traceback);                        font-weight: inherit; font-style: inherit; }
+.highlight .kc  { color: var(--kw-constant);                          font-weight: inherit; font-style: inherit; }
+.highlight .kd  { color: var(--kw-declaration);                       font-weight: inherit; font-style: inherit; }
+.highlight .kn  { color: var(--kw-namespace);                         font-weight: inherit; font-style: inherit; }
+.highlight .kp  { color: var(--kw-pseudo);                            font-weight: inherit; font-style: inherit; }
+.highlight .kr  { color: var(--kw-reserved);                          font-weight: inherit; font-style: inherit; }
+.highlight .kt  { color: var(--kw-type);                              font-weight: inherit; font-style: inherit; }
+.highlight .m   { color: var(--number);                               font-weight: inherit; font-style: inherit; }
+.highlight .s   { color: var(--string);                               font-weight: inherit; font-style: inherit; }
+.highlight .n   { color: var(--name);                                 font-weight: inherit; font-style: inherit; }
+.highlight .na  { color: var(--name-attribute);                       font-weight: inherit; font-style: inherit; }
+.highlight .nb  { color: var(--name-builtin);                         font-weight: inherit; font-style: inherit; }
+.highlight .nc  { color: var(--name-class);                           font-weight: inherit; font-style: inherit; }
+.highlight .no  { color: var(--name-constant);                        font-weight: inherit; font-style: inherit; }
+.highlight .nd  { color: var(--name-decorator);                       font-weight: inherit; font-style: inherit; }
+.highlight .ni  { color: var(--name-entity);                          font-weight: inherit; font-style: inherit; }
+.highlight .ne  { color: var(--name-exception);                       font-weight: inherit; font-style: inherit; }
+.highlight .nf  { color: var(--name-function);                        font-weight: inherit; font-style: inherit; }
+.highlight .nl  { color: var(--name-label);                           font-weight: inherit; font-style: inherit; }
+.highlight .nn  { color: var(--name-namespace);                       font-weight: inherit; font-style: inherit; }
+.highlight .nt  { color: var(--name-tag);                             font-weight: inherit; font-style: inherit; }
+.highlight .nv  { color: var(--variable);                             font-weight: inherit; font-style: inherit; }
+.highlight .ow  { color: var(--operator-word);                        font-weight: inherit; font-style: inherit; }
+.highlight .p   { color: var(--punctuation);                          font-weight: inherit; font-style: inherit; }
+.highlight .w   { color: var(--txt-whitespace);                       font-weight: inherit; font-style: inherit; }
+.highlight .mf  { color: var(--num-float);                            font-weight: inherit; font-style: inherit; }
+.highlight .mh  { color: var(--num-hex);                              font-weight: inherit; font-style: inherit; }
+.highlight .mi  { color: var(--num-int);                              font-weight: inherit; font-style: inherit; }
+.highlight .mo  { color: var(--num-oct);                              font-weight: inherit; font-style: inherit; }
+.highlight .sb  { color: var(--str-backtick);                         font-weight: inherit; font-style: inherit; }
+.highlight .sc  { color: var(--str-char);                             font-weight: inherit; font-style: inherit; }
+.highlight .sd  { color: var(--str-doc);                              font-weight: inherit; font-style: inherit; }
+.highlight .s2  { color: var(--str-double);                           font-weight: inherit; font-style: inherit; }
+.highlight .se  { color: var(--str-escape);                           font-weight: inherit; font-style: inherit; }
+.highlight .sh  { color: var(--str-heredoc);                          font-weight: inherit; font-style: inherit; }
+.highlight .si  { color: var(--str-interpol);                         font-weight: inherit; font-style: inherit; }
+.highlight .sx  { color: var(--str-other);                            font-weight: inherit; font-style: inherit; }
+.highlight .sr  { color: var(--str-regex);                            font-weight: inherit; font-style: inherit; }
+.highlight .s1  { color: var(--str-single);                           font-weight: inherit; font-style: inherit; }
+.highlight .ss  { color: var(--str-symbol);                           font-weight: inherit; font-style: inherit; }
+.highlight .bp  { color: var(--name-builtinps);                       font-weight: inherit; font-style: inherit; }
+.highlight .vc  { color: var(--var-class);                            font-weight: inherit; font-style: inherit; }
+.highlight .vg  { color: var(--var-global);                           font-weight: inherit; font-style: inherit; }
+.highlight .vi  { color: var(--var-instance);                         font-weight: inherit; font-style: inherit; }
+.highlight .il  { color: var(--num-int-long);                         font-weight: inherit; font-style: inherit; }

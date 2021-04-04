@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href={{ site.baseurl }}{{ "/assets/css/styles.css" }}>
+    {% seo %}
+    <title>{{ page.title }}</title>
+  </head>
+  <header>
+    {% include navigation.html %}
+  </header>
+  <hr>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <script>
+      //-----------------------------------------------------------------------------
+      // Set Color Theme
+      //-----------------------------------------------------------------------------
+      function updateTheme() {
+        let prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+        let theme = sessionStorage.getItem('theme');
+
+        if (theme === "light") {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else if (theme === "dark") {
+          document.documentElement.setAttribute('data-theme', 'dark' );
+        } else if (prefersDark.matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light' );
+        }
+      }
+
+      updateTheme();
+
+      //------------------------------------------------------------------------------
+      // Fix Syntax Highlighting
+      //------------------------------------------------------------------------------
+      
+      let blocks = document.querySelectorAll("div.highlighter-rouge");
+      blocks.forEach(block => {
+        var code = block.firstChild.firstChild;
+        code.setAttribute('class', "highlight language-py highlighter-rouge");
+        block.parentElement.replaceChild(code, block);
+      });
+      
+  
+    </script>
+  </footer>
+</html>
