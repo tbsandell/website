@@ -1,0 +1,22 @@
+---
+layout: math
+title: Math
+---
+
+<h1>Math</h1>
+
+<h3>Definitions</h3>
+  <ul>
+    {% for def in site.data.math.defs %}
+      <li><strong>{{ def.name }}:</strong> {{ def.inf }}</li>
+    {% endfor %}
+  </ul>
+  
+<h3>Theorems</h3>
+<ul>
+{% for thm in site.data.math.thms %}
+  <li>
+    <strong>{{ thm.name }}:</strong> <span class="math">{{ thm.thm.inf | markdownify }}</span><br>
+    <strong>Proof: </strong><span class="math">{{ thm.prf.inf | markdownify }}<span class="qed">$\qed$</span></span>
+  </li><hr>
+{% endfor %}
