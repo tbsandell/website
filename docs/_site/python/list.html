@@ -11,7 +11,7 @@
     <meta name="twitter:card" content="summary" />
     <meta property="twitter:title" content="List" />
     <script type="application/ld+json">
-      {"@type":"WebPage","url":"/website/python/list.html","headline":"List","@context":"https://schema.org"}
+      {"@type":"WebPage","headline":"List","url":"/website/python/list.html","@context":"https://schema.org"}
     </script>
     <!-- End Jekyll SEO tag -->
     <title>List</title>
@@ -61,35 +61,35 @@
           <td>List literal</td>
           <td><code class="highlight language-py" data-lang="py"><span class="p">[</span><span class="nb">any</span><span class="p">,</span> <span class="nb">any</span><span class="p">,</span> <span class="p">...,</span> <span class="nb">any</span><span class="p">]</span></code></td>
           <td><code class="highlight language-py" data-lang="py"><span class="p">[</span><span class="n">e_1</span><span class="p">,</span> <span class="n">e_2</span><span class="p">,</span> <span class="p">...,</span> <span class="n">e_n</span><span class="p">]</span></code></td>
-          <td>Returns a list with the objects <code class="highlight language-py" data-lang="py"><span class="n">e_1</span></code> through <code class="highlight language-py" data-lang="py"><span class="n">e_n</span></code></td>
+          <td>Returns a list with the objects {%h py%}e_1{%endh%} through {%h py%}e_n{%endh%}</td>
           <td><code class="highlight language-py" data-lang="py"><span class="p">[</span><span class="s">'hello'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">'u'</span><span class="p">]</span></code></td>
         </tr>
         <tr>
           <td>Access</td>
           <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></code></td>
           <td><code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></code></td>
-          <td>Returns the element at index <code class="highlight language-py" data-lang="py"><span class="n">i</span></code></td>
+          <td>Returns the element at index {%h py%}i{%endh%}</td>
           <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span></code></td>
         </tr>
         <tr>
           <td>Negative Access</td>
           <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></code></td>
           <td><code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="n">i</span><span class="p">]</span></code></td>
-          <td>Equivalent to <code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">-</span><span class="n">i</span><span class="p">]</span></code></td>
+          <td>Equivalent to {%h py%} l[len(l)-i] {%endh%}</td>
           <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span></code></td>
         </tr>
         <tr>
           <td>Slice</td>
           <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">:</span><span class="nb">int</span><span class="p">]</span></code></td>
           <td><code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">]</span></code></td>
-          <td>Returns the elements at indexes <code class="highlight language-py" data-lang="py"><span class="n">i</span></code> through <code class="highlight language-py" data-lang="py"><span class="n">j</span></code></td>
+          <td>Returns the elements at indexes {%h py%}i{%endh%} through {%h py%}j{%endh%}</td>
           <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span></code></td>
         </tr>
         <tr>
           <td>Slice with skip</td>
           <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">:</span><span class="nb">int</span><span class="p">:</span><span class="nb">int</span><span class="p">]</span></code></td>
           <td><code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">:</span><span class="n">k</span><span class="p">]</span></code></td>
-          <td>Returns the elements at indexes <code class="highlight language-py" data-lang="py"><span class="n">i</span> <span class="o">+</span> <span class="n">kn</span></code> until <code class="highlight language-py" data-lang="py"><span class="n">j</span></code></td>
+          <td>Returns the elements at indexes {%h py%}i + kn{%endh%} until {%h py%}j{%endh%}</td>
           <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span></code></td>
         </tr>
         <tr>
@@ -103,7 +103,7 @@
           <td>Multiply</td>
           <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span> <span class="o">*</span> <span class="nb">int</span></code></td>
           <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span> <span class="o">*</span> <span class="n">i</span></code></td>
-          <td>Returns <code class="highlight language-py" data-lang="py"><span class="n">myList</span> <span class="o">+</span> <span class="n">myList</span> <span class="o">+</span> <span class="p">...</span></code> <code class="highlight language-py" data-lang="py"><span class="n">i</span></code> times</td>
+          <td>Returns {%h py%}myList + myList + …{%endh%} {%h py%}i{%endh%} times</td>
           <td><code class="highlight language-py" data-lang="py"><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span></code></td>
         </tr>
       </tbody>
@@ -124,7 +124,7 @@
           <td>Append</td>
           <td><code class="highlight language-py" data-lang="py"><span class="nb">list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">any</span><span class="p">)</span></code></td>
           <td><code class="highlight language-py" data-lang="py"><span class="n">l</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></code></td>
-          <td>Appends <code class="highlight language-py" data-lang="py"><span class="n">obj</span></code> to the end of <code class="highlight language-py" data-lang="py"><span class="n">l</span></code></td>
+          <td>Appends {%h py%}obj{%endh%} to the end of {%h py%}l{%endh%}</td>
           <td><code class="highlight language-py" data-lang="py"><span class="n">myList</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">"hello"</span><span class="p">)</span></code></td>
         </tr>
       </tbody>
