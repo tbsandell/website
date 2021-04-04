@@ -52,9 +52,9 @@ List
 Operations
 ----------
 {% capture my_include %}{% include ref-table.md content=page.operations %}{% endcapture %}
-{{ my_include | liquefy | markdownify }}
+{{ my_include | liquify | markdownify }}
 
 Functions
 ---------
 {% capture my_include %}{% include ref-table.md content=page.functions %}{% endcapture %}
-{{ my_include | liquefy | markdownify }}
+{{ my_include | liquify | markdownify }}
