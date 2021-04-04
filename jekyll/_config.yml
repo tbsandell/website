@@ -3,7 +3,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-tidy
   - jekyll-liquify
-  - jekyll_inline_highlight
 
 
 baseurl: /website
