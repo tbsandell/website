@@ -1,16 +1,23 @@
-html { background-color: var(--primary-color); color: var(--accent-color); font-family: "CMUSerifRoman"; }
-html[data-theme="light"] { --primary-color: #ddccbb; --secondary-color: #aa9988; --accent-color: #111133; --focus-color: #998877; }
-html[data-theme="dark"] { --primary-color: #1e1f20; --secondary-color: #333340; --accent-color: #ffffff; --focus-color: #2c3e50; }
+html { background-color: var(--primary-color); color: var(--accent-color); font-family: default; }
+html[data-theme="light"] { --primary-color: #ddccbb; --secondary-color: #aa9988; --highlight-color: #ccbbaa; --accent-color: #111133; --focus-color: #998877; }
+html[data-theme="dark"] { --primary-color: #1e1f20; --secondary-color: #333340; --highlight-color: #334; --accent-color: #ffffff; --focus-color: #2c3e50; }
+.language-switcher { display: inline-block; top: 0px; vertical-align: text-top; }
 .center { width: 60%; margin: 0 auto; border-left: solid var(--secondary-color); border-right: solid var(--secondary-color); padding: 0px 50px; }
+.centered { width: fit-content; margin: 0 auto; }
+body { margin: 0px 0px 5em 0px; }
 main table { margin-left: auto; margin-right: auto; }
-.highlight { border: thin dashed var(--secondary-color); }
+code { border: thin dashed var(--secondary-color); }
+pre.highlight { margin: 0px; border: thin dashed var(--secondary-color); }
+pre.highlight code { border: none; }
 th { background-color: var(--secondary-color); }
 table, th, td { border: thin solid var(--secondary-color); border-collapse: collapse; padding: 10px; }
 pre, code { width: fit-content; height: fit-content; }
 .highlighter-rouge, .highlight { padding: 2px; width: fit-content; }
 #theme-switcher { font-size: calc(200% + 10px); float: right; background-color: var(--secondary-color); color: var(--accent-color); border: none; }
 #theme-switcher:hover { background-color: var(--focus-color); }
+blockquote { border: solid thin var(--secondary-color); padding: 0.2em 1em; }
 .katex { font-size: 1em !important; }
+.katex span { z-index: -1; }
 span.fr { float: right; }
 span.math { display: block; margin-left: 1em; }
 span.math .qed { position: relative; float: right; top: -35px; }
@@ -21,14 +28,15 @@ nav ul li { display: block; position: relative; float: left; background: var(--s
 nav ul li ul { display: none; }
 nav ul li ul li { border-top: 0; }
 nav ul li ul ul { left: 100%; top: 0; }
-nav ul li a { display: block; padding: 1em; text-decoration: none; white-space: nowrap; color: var(--accent-color); }
+nav ul li a, nav ul li span { display: block; padding: 1em; text-decoration: none; white-space: nowrap; color: var(--accent-color); }
+nav ul li span:hover { cursor: default; }
 nav ul li:hover > ul { display: block; position: absolute; }
 nav ul li:hover li { float: none; }
 nav ul li:hover li a:hover { background: var(--focus-color); }
 nav ul li:hover a { background: var(--secondary-color); }
 nav ul li:hover a:hover { background: var(--focus-color); }
-html, html[data-theme="light"] { --back-color:    #1E1E1E; --name:          #000000; --keyword:       #5C96D6; --operator:      #0057b4; --comment:       #FFFFFF; --string:        #af4820; --name-attribute:#000000; --kw-constant:   #FFFFFF; --operator-word: #0057b4; --com-multiline: #FFFFFF; --str-backtick:  #FFFFFF; --name-builtin:  #000000; --kw-declaration:#FFFFFF; --gen-deleted:   #FFFFFF; --com-preproc:   #FFFFFF; --str-char:      #FFFFFF; --name-builtinps:#000000; --kw-namespace:  #FFFFFF; --gen-emph:      #FFFFFF; --com-single:    #FFFFFF; --str-doc:       #FFFFFF; --name-class:    #000000; --kw-pseudo:     #FFFFFF; --gen-error:     #FFFFFF; --com-special:   #FFFFFF; --str-double:    #FFFFFF; --name-constant: #000000; --kw-reserved:   #FFFFFF; --gen-heading:   #FFFFFF; --error:         #FFFFFF; --str-escape:    #D7BA7D; --name-decorator:#000000; --kw-type:       #FFFFFF; --gen-inserted:  #FFFFFF; --punctuation:   #666666; --str-heredoc:   #FFFFFF; --name-entity:   #000000; --number:        #4F9C1E; --gen-output:    #FFFFFF; --txt-whitespace:#FFFFFF; --str-interpol:  #FFFFFF; --name-exception:#000000; --num-float:     #4F9C1E; --gen-prompt:    #FFFFFF; --variable:      #9CDCFE; --str-other:     #FFFFFF; --name-function: #000000; --num-hex:       #4F9C1E; --gen-strong:    #FFFFFF; --var-class:     #FFFFFF; --str-regex:     #FFFFFF; --name-label:    #000000; --num-int:       #4F9C1E; --gen-subheading:#FFFFFF; --var-global:    #FFFFFF; --str-single:    #FFFFFF; --name-namespace:#000000; --num-int-long:  #4F9C1E; --gen-traceback: #FFFFFF; --var-instance:  #FFFFFF; --str-symbol:    #FFFFFF; --name-tag:      #000000; --num-oct:       #4F9C1E; }
-html[data-theme="dark"] { --back-color:    #1E1E1E; --name:          #9CDCFE; --keyword:       #5C96D6; --operator:      #C586C0; --comment:       #FFFFFF; --string:        #CE9178; --name-attribute:#9CDCFE; --kw-constant:   #FFFFFF; --operator-word: #5C96D6; --com-multiline: #FFFFFF; --str-backtick:  #FFFFFF; --name-builtin:  white; --kw-declaration:#FFFFFF; --gen-deleted:   #FFFFFF; --com-preproc:   #FFFFFF; --str-char:      #FFFFFF; --name-builtinps:#FFFFFF; --kw-namespace:  #FFFFFF; --gen-emph:      #FFFFFF; --com-single:    #FFFFFF; --str-doc:       #FFFFFF; --name-class:    #9CDCFE; --kw-pseudo:     #FFFFFF; --gen-error:     #FFFFFF; --com-special:   #FFFFFF; --str-double:    #FFFFFF; --name-constant: #9CDCFE; --kw-reserved:   #FFFFFF; --gen-heading:   #FFFFFF; --error:         #FFFFFF; --str-escape:    #D7BA7D; --name-decorator:#9CDCFE; --kw-type:       #FFFFFF; --gen-inserted:  #FFFFFF; --punctuation:   #888888; --str-heredoc:   #FFFFFF; --name-entity:   #9CDCFE; --number:        #B5CEA5; --gen-output:    #FFFFFF; --txt-whitespace:#FFFFFF; --str-interpol:  #FFFFFF; --name-exception:#9CDCFE; --num-float:     #B5CEA5; --gen-prompt:    #FFFFFF; --variable:      #9CDCFE; --str-other:     #FFFFFF; --name-function: #9CDCFE; --num-hex:       #B5CEA5; --gen-strong:    #FFFFFF; --var-class:     #FFFFFF; --str-regex:     #FFFFFF; --name-label:    #9CDCFE; --num-int:       #B5CEA5; --gen-subheading:#FFFFFF; --var-global:    #FFFFFF; --str-single:    #FFFFFF; --name-namespace:#9CDCFE; --num-int-long:  #FFFFFF; --gen-traceback: #FFFFFF; --var-instance:  #FFFFFF; --str-symbol:    #FFFFFF; --name-tag:      #9CDCFE; --num-oct:       #B5CEA5; }
+html, html[data-theme="light"] { --back-color:    #1E1E1E; --name:          #000000; --keyword:       #5C96D6; --operator:      #0057b4; --comment:       #FFFFFF; --string:        #af4820; --name-attribute:#000000; --kw-constant:   #FFFFFF; --operator-word: #0057b4; --com-multiline: #FFFFFF; --str-backtick:  #FFFFFF; --name-builtin:  #000000; --kw-declaration:#5C96D6; --gen-deleted:   #FFFFFF; --com-preproc:   #FFFFFF; --str-char:      #FFFFFF; --name-builtinps:#000000; --kw-namespace:  #FFFFFF; --gen-emph:      #FFFFFF; --com-single:    #FFFFFF; --str-doc:       #FFFFFF; --name-class:    #000000; --kw-pseudo:     #FFFFFF; --gen-error:     #FFFFFF; --com-special:   #FFFFFF; --str-double:    #FFFFFF; --name-constant: #000000; --kw-reserved:   #FFFFFF; --gen-heading:   #FFFFFF; --error:         #FFFFFF; --str-escape:    #D7BA7D; --name-decorator:#000000; --kw-type:       #FFFFFF; --gen-inserted:  #FFFFFF; --punctuation:   #666666; --str-heredoc:   #FFFFFF; --name-entity:   #000000; --number:        #4F9C1E; --gen-output:    #FFFFFF; --txt-whitespace:#FFFFFF; --str-interpol:  #FFFFFF; --name-exception:#000000; --num-float:     #4F9C1E; --gen-prompt:    #FFFFFF; --variable:      #9CDCFE; --str-other:     #FFFFFF; --name-function: #000000; --num-hex:       #4F9C1E; --gen-strong:    #FFFFFF; --var-class:     #FFFFFF; --str-regex:     #FFFFFF; --name-label:    #000000; --num-int:       #4F9C1E; --gen-subheading:#FFFFFF; --var-global:    #FFFFFF; --str-single:    #FFFFFF; --name-namespace:#000000; --num-int-long:  #4F9C1E; --gen-traceback: #FFFFFF; --var-instance:  #FFFFFF; --str-symbol:    #FFFFFF; --name-tag:      #000000; --num-oct:       #4F9C1E; }
+html[data-theme="dark"] { --back-color:    #1E1E1E; --name:          #9CDCFE; --keyword:       #C586C0; --operator:      #FFFFFF; --comment:       #6A9955; --string:        #CE9178; --name-attribute:#9CDCFE; --kw-constant:   #FFFFFF; --operator-word: #5C96D6; --com-multiline: #6A9955; --str-backtick:  #FFFFFF; --name-builtin:  #DCDCAA; --kw-declaration:#5C96D6; --gen-deleted:   #FFFFFF; --com-preproc:   #6A9955; --str-char:      #FFFFFF; --name-builtinps:#FFFFFF; --kw-namespace:  #FFFFFF; --gen-emph:      #FFFFFF; --com-single:    #6A9955; --str-doc:       #FFFFFF; --name-class:    #9CDCFE; --kw-pseudo:     #FFFFFF; --gen-error:     #FFFFFF; --com-special:   #6A9955; --str-double:    #FFFFFF; --name-constant: #9CDCFE; --kw-reserved:   #FFFFFF; --gen-heading:   #FFFFFF; --error:         #FFFFFF; --str-escape:    #D7BA7D; --name-decorator:#9CDCFE; --kw-type:       #5C96D6; --gen-inserted:  #FFFFFF; --punctuation:   #888888; --str-heredoc:   #FFFFFF; --name-entity:   #9CDCFE; --number:        #B5CEA5; --gen-output:    #FFFFFF; --txt-whitespace:#FFFFFF; --str-interpol:  #FFFFFF; --name-exception:#9CDCFE; --num-float:     #B5CEA5; --gen-prompt:    #FFFFFF; --variable:      #9CDCFE; --str-other:     #FFFFFF; --name-function: #9CDCFE; --num-hex:       #B5CEA5; --gen-strong:    #FFFFFF; --var-class:     #FFFFFF; --str-regex:     #FFFFFF; --name-label:    #9CDCFE; --num-int:       #B5CEA5; --gen-subheading:#FFFFFF; --var-global:    #FFFFFF; --str-single:    #FFFFFF; --name-namespace:#9CDCFE; --num-int-long:  #FFFFFF; --gen-traceback: #FFFFFF; --var-instance:  #FFFFFF; --str-symbol:    #FFFFFF; --name-tag:      #9CDCFE; --num-oct:       #B5CEA5; }
 .highlight .c { color: var(--comment); font-weight: inherit; font-style: inherit; }
 .highlight .err { color: var(--error); font-weight: inherit; font-style: inherit; }
 .highlight .k { color: var(--keyword); font-weight: inherit; font-style: inherit; }
@@ -68,6 +76,7 @@ html[data-theme="dark"] { --back-color:    #1E1E1E; --name:          #9CDCFE; --
 .highlight .nn { color: var(--name-namespace); font-weight: inherit; font-style: inherit; }
 .highlight .nt { color: var(--name-tag); font-weight: inherit; font-style: inherit; }
 .highlight .nv { color: var(--variable); font-weight: inherit; font-style: inherit; }
+.highlight .nx { color: var(--name); font-weight: inherit; font-style: inherit; }
 .highlight .ow { color: var(--operator-word); font-weight: inherit; font-style: inherit; }
 .highlight .p { color: var(--punctuation); font-weight: inherit; font-style: inherit; }
 .highlight .w { color: var(--txt-whitespace); font-weight: inherit; font-style: inherit; }
