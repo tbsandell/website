@@ -1,20 +1,28 @@
 html {
   background-color: var(--primary-color);
   color: var(--accent-color);
-  font-family: "CMUSerifRoman";
+  font-family: default;//"CMUSerifRoman";
 
   &[data-theme="light"] {
     --primary-color: #ddccbb;
     --secondary-color: #aa9988;
+    --highlight-color: #ccbbaa;
     --accent-color: #111133;
     --focus-color: #998877;
   }
   &[data-theme="dark"] {
     --primary-color: #1e1f20;
     --secondary-color: #333340;
+    --highlight-color: #334;
     --accent-color: #ffffff;
     --focus-color: #2c3e50;
   }
+}
+
+.language-switcher {
+  display: inline-block;
+  top: 0px;
+  vertical-align: text-top;
 }
 
 .center {
@@ -25,13 +33,29 @@ html {
   padding: 0px 50px;
 }
 
+.centered {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0px 0px 5em 0px;
+}
+
 main table {
   margin-left: auto;
   margin-right: auto;
 }
 
-.highlight {
+code {
   border: thin dashed var(--secondary-color); 
+}
+pre.highlight {
+  margin: 0px;
+  border: thin dashed var(--secondary-color);
+  code {
+    border: none;
+  }
 }
 th {
   background-color: var(--secondary-color); 
@@ -60,7 +84,15 @@ pre, code {
   border: none;
 }
 
+blockquote {
+  border: solid thin var(--secondary-color);
+  padding: 0.2em 1em;
+}
+
 .katex {
+  span {
+    z-index: -1;
+  }
   font-size: 1em !important;
 }
 
@@ -102,12 +134,15 @@ nav ul {
         top: 0;
       }
     }
-    a {
+    a, span {
       display: block;
       padding: 1em;
       text-decoration: none;
       white-space: nowrap;
       color: var(--accent-color);
+    }
+    span:hover {
+      cursor: default;
     }
     &:hover {
       & > ul {

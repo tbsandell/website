@@ -1,13 +1,19 @@
 [ 
   {path: /index, type: file, name: Home},
   {path: /python, type: dir, name: Python, contents: [
-    {path: /list, type: file, name: Lists},
-    {path: /string, type: file, name: Strings}
+    {path: /list, type: file, name: List},
+    {path: /string, type: file, name: String},
+    {path: /dict, type: file, name: Dictionary}
   ]},
   #{path: /csci, type: dir, name: CSCI, contents: [
   #  {path: /algorithms, type: dir, name: Algorithms, contents: [
   #    {path: /a-star, type: file, name: A*}
   #  ]}
   #]},
-  {path: /math, type: dir, name: Math, contents: []}
+  {path: /sfml, type: dir, name: SFML, contents: [
+    {path: /time, type: file, name: Time},
+    {path: /window, type: file, name: Windows}
+  ]},
+  {path: /math, type: dir, name: Math, contents: []},
+  {path: /euler, type: enum, name: Euler, num1: 9, num2: 9}
 ]

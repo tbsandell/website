@@ -1,0 +1,17 @@
+{% assign languages = include.languages | split: "," %}
+{% assign solnum = "sol" | append: include.num | append: "(" %}
+{% assign allLines = "" %}
+
+{% for language in languages %}
+{% assign languageUrl = page.url | append: "main." | append: language | remove_first: "/" %}
+{% capture languageContent %}
+{% include includemethod.html filename=languageUrl method=solnum %}{% endcapture %}
+{% assign languageLines = languageContent | strip | newline_to_br | split: '<br />' | join: ",,," %}
+{% assign allLines = allLines | append: ",,,," | append: languageLines %}
+{% endfor %}
+
+{% assign allLines = allLines | remove_first: ",,,," %}
+
+{% capture ls %}
+{% include languageSwitcher.html languages=include.languages lines=allLines %}
+{% endcapture %}<div class="centered">{{ ls | markdownify }}</div>

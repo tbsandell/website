@@ -1,0 +1,31 @@
+{% comment %}
+Must do {% assign languageSwitcherId = 1 %} before using
+{% endcomment %}
+
+{% assign languages = include.languages | split: "," %}
+{% assign languageLines = include.lines | split: ",,,," %}
+<script>
+  function hideAllLanguages{{ languageSwitcherId }}() {
+    {% for language in languages %}
+      document.querySelectorAll(".language-switcher-{{ languageSwitcherId }} .language-{{ language }}").forEach((e) => {e.style.display = "none";});
+    {% endfor %}
+  }
+  function showLanguage{{ languageSwitcherId }}(lang) {
+    document.querySelectorAll(".language-switcher-{{ languageSwitcherId }} .language-" + lang).forEach((e) => {e.style.display = "block";});
+  }
+  document.addEventListener("DOMContentLoaded", () => {hideAllLanguages{{ languageSwitcherId }}(); showLanguage{{ languageSwitcherId }}("{{ languages[0] }}");})
+</script>
+<div class="language-switcher language-switcher-{{ languageSwitcherId }}">
+{% for language in languages %}
+  <button onclick="hideAllLanguages{{ languageSwitcherId }}(); showLanguage{{ languageSwitcherId }}('{{ language }}')">{{ language }}</button>
+{% endfor %}
+{% for language in languages %}
+{% assign i = forloop.index | minus: 1 %}
+{% capture temp %}
+```{{language}}
+{{ languageLines[i] | split: ",,," }}
+```
+{% endcapture %}{{ temp | markdownify }}
+{% endfor %}
+</div>
+{% assign languageSwitcherId = languageSwitcherId | plus: 1 %}

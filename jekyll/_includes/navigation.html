@@ -2,29 +2,56 @@
   <ul>
     {% for item1 in site.data.navigation %}
       {% assign path1 = item1.path | relative_url %}
-      <li>
-        {% if item1.type == "file" %}<a href="{{ path1 }}">{{ item1.name }}</a>{% endif %}
-        {% if item1.type == "dir"  %}
+      {% if item1.type == "enum" %}
+        <li>
           <a href="{{ path1 }}/">{{ item1.name }}</a>
           <ul>
-          {% for item2 in item1.contents %}
-            {% assign path2 = path1 | append: item2.path %}
-            <li>
-              {% if item2.type == "file" %}<a href="{{ path2 }}">{{ item2.name }}</a>{% endif %}    
-              {% if item2.type == "dir"  %}
-                <a href="{{ path2 }}/">{{ item2.name }}</a>
+            {% assign temp = item1.num1 | minus: 1 %}
+            {% for i in (0..temp) %}
+              <li>
+                <span>{{ i }}0-{{ i }}9</span>
                 <ul>
-                  {% for item3 in item2.contents %}
-                    {% assign path3 = path2 | append: item3.path %}
-                    <li><a href="{{ path3 }}">{{ item3.name }}</a></li>
-                  {% endfor %}
+                  {% for j in (0..9) %}
+                    <li><a href="{{ path1 }}/{{ i }}0-{{ i }}9/{{ i }}{{ j }}/">{{ i }}{{ j }}</a></li>
+                  {% endfor %}  
                 </ul>
-              {% endif %}
+              </li>
+            {% endfor %}
+            <li>
+              <span>{{ item1.num1 }}0-{{ item1.num1 }}{{ item1.num2 }}</span>  
+              <ul>
+                {% for j in (0..item1.num2) %}
+                  <li><a href="{{ path1 }}/{{ item1.num1 }}0-{{ item1.num1 }}9/{{ item1.num1 }}{{ j }}">{{ item1.num1 }}{{ j }}</a></li>
+                {% endfor %}
+              </ul>
             </li>
-          {% endfor %}
+          </ul>
+        </li>
+      {% else %}
+        <li>
+          {% if item1.type == "file" %}<a href="{{ path1 }}">{{ item1.name }}</a>{% endif %}
+          {% if item1.type == "dir"  %}
+            <a href="{{ path1 }}/">{{ item1.name }}</a>
+            <ul>
+            {% for item2 in item1.contents %}
+              {% assign path2 = path1 | append: item2.path %}
+              <li>
+                {% if item2.type == "file" %}<a href="{{ path2 }}">{{ item2.name }}</a>{% endif %}    
+                {% if item2.type == "dir"  %}
+                  <a href="{{ path2 }}/">{{ item2.name }}</a>
+                  <ul>
+                    {% for item3 in item2.contents %}
+                      {% assign path3 = path2 | append: item3.path %}
+                      <li><a href="{{ path3 }}">{{ item3.name }}</a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </li>
+            {% endfor %}
             </ul>
-        {% endif %}
-      </li>
+          {% endif %}
+        </li>
+      {% endif %}
     {% endfor %}
     <button id="theme-switcher" onclick="window.sessionStorage.setItem('theme', window.sessionStorage.getItem('theme') === 'dark' ? 'light' : 'dark'); updateTheme();">&#x2600;</button>
   </ul>

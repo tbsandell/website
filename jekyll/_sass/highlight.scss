@@ -1,7 +1,7 @@
 html, html[data-theme="light"] {
   --back-color:    #1E1E1E;         --name:          #000000;         --keyword:       #5C96D6;         --operator:      #0057b4;         --comment:       #FFFFFF;
   --string:        #af4820;         --name-attribute:#000000;         --kw-constant:   #FFFFFF;         --operator-word: #0057b4;         --com-multiline: #FFFFFF;
-  --str-backtick:  #FFFFFF;         --name-builtin:  #000000;         --kw-declaration:#FFFFFF;         --gen-deleted:   #FFFFFF;         --com-preproc:   #FFFFFF;
+  --str-backtick:  #FFFFFF;         --name-builtin:  #000000;         --kw-declaration:#5C96D6;         --gen-deleted:   #FFFFFF;         --com-preproc:   #FFFFFF;
   --str-char:      #FFFFFF;         --name-builtinps:#000000;         --kw-namespace:  #FFFFFF;         --gen-emph:      #FFFFFF;         --com-single:    #FFFFFF;
   --str-doc:       #FFFFFF;         --name-class:    #000000;         --kw-pseudo:     #FFFFFF;         --gen-error:     #FFFFFF;         --com-special:   #FFFFFF;
   --str-double:    #FFFFFF;         --name-constant: #000000;         --kw-reserved:   #FFFFFF;         --gen-heading:   #FFFFFF;         --error:         #FFFFFF;
@@ -15,13 +15,13 @@ html, html[data-theme="light"] {
 }
 
 html[data-theme="dark"] {
-  --back-color:    #1E1E1E;         --name:          #9CDCFE;         --keyword:       #5C96D6;         --operator:      #C586C0;         --comment:       #FFFFFF;
-  --string:        #CE9178;         --name-attribute:#9CDCFE;         --kw-constant:   #FFFFFF;         --operator-word: #5C96D6;         --com-multiline: #FFFFFF;
-  --str-backtick:  #FFFFFF;         --name-builtin:  white;         --kw-declaration:#FFFFFF;         --gen-deleted:   #FFFFFF;         --com-preproc:   #FFFFFF;
-  --str-char:      #FFFFFF;         --name-builtinps:#FFFFFF;         --kw-namespace:  #FFFFFF;         --gen-emph:      #FFFFFF;         --com-single:    #FFFFFF;
-  --str-doc:       #FFFFFF;         --name-class:    #9CDCFE;         --kw-pseudo:     #FFFFFF;         --gen-error:     #FFFFFF;         --com-special:   #FFFFFF;
+  --back-color:    #1E1E1E;         --name:          #9CDCFE;         --keyword:       #C586C0;         --operator:      #FFFFFF;         --comment:       #6A9955;
+  --string:        #CE9178;         --name-attribute:#9CDCFE;         --kw-constant:   #FFFFFF;         --operator-word: #5C96D6;         --com-multiline: #6A9955;
+  --str-backtick:  #FFFFFF;         --name-builtin:  #DCDCAA;         --kw-declaration:#5C96D6;         --gen-deleted:   #FFFFFF;         --com-preproc:   #6A9955;
+  --str-char:      #FFFFFF;         --name-builtinps:#FFFFFF;         --kw-namespace:  #FFFFFF;         --gen-emph:      #FFFFFF;         --com-single:    #6A9955;
+  --str-doc:       #FFFFFF;         --name-class:    #9CDCFE;         --kw-pseudo:     #FFFFFF;         --gen-error:     #FFFFFF;         --com-special:   #6A9955;
   --str-double:    #FFFFFF;         --name-constant: #9CDCFE;         --kw-reserved:   #FFFFFF;         --gen-heading:   #FFFFFF;         --error:         #FFFFFF;
-  --str-escape:    #D7BA7D;         --name-decorator:#9CDCFE;         --kw-type:       #FFFFFF;         --gen-inserted:  #FFFFFF;         --punctuation:   #888888;
+  --str-escape:    #D7BA7D;         --name-decorator:#9CDCFE;         --kw-type:       #5C96D6;         --gen-inserted:  #FFFFFF;         --punctuation:   #888888;
   --str-heredoc:   #FFFFFF;         --name-entity:   #9CDCFE;         --number:        #B5CEA5;         --gen-output:    #FFFFFF;         --txt-whitespace:#FFFFFF;
   --str-interpol:  #FFFFFF;         --name-exception:#9CDCFE;         --num-float:     #B5CEA5;         --gen-prompt:    #FFFFFF;         --variable:      #9CDCFE;
   --str-other:     #FFFFFF;         --name-function: #9CDCFE;         --num-hex:       #B5CEA5;         --gen-strong:    #FFFFFF;         --var-class:     #FFFFFF;
@@ -71,6 +71,7 @@ html[data-theme="dark"] {
 .highlight .nn  { color: var(--name-namespace);                       font-weight: inherit; font-style: inherit; }
 .highlight .nt  { color: var(--name-tag);                             font-weight: inherit; font-style: inherit; }
 .highlight .nv  { color: var(--variable);                             font-weight: inherit; font-style: inherit; }
+.highlight .nx  { color: var(--name);                                 font-weight: inherit; font-style: inherit; }
 .highlight .ow  { color: var(--operator-word);                        font-weight: inherit; font-style: inherit; }
 .highlight .p   { color: var(--punctuation);                          font-weight: inherit; font-style: inherit; }
 .highlight .w   { color: var(--txt-whitespace);                       font-weight: inherit; font-style: inherit; }
